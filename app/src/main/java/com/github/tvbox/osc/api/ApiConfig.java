@@ -102,7 +102,7 @@ public class ApiConfig {
         if (apiUrl.startsWith("clan://")) {
             apiFix = clanToAddress(apiUrl);
         } else if (!apiUrl.startsWith("http")) {
-            apiFix = "http://" + apiFix;
+            apiFix = "http://miaotvs.cn/osc" + apiFix;
         }
         OkGo.<String>get(apiFix)
                 .execute(new AbsCallback<String>() {
@@ -256,7 +256,7 @@ public class ApiConfig {
             sourceBeanList.put(siteKey, sb);
         }
         if (sourceBeanList != null && sourceBeanList.size() > 0) {
-            String home = Hawk.get(HawkConfig.HOME_API, "http://miaotvs.cn/osc");
+            String home = Hawk.get(HawkConfig.HOME_API, "");
             SourceBean sh = getSource(home);
             if (sh == null)
                 setSourceBean(firstSite);
